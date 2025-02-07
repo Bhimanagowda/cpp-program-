@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "name": "Debug C++ Program",
+          "type": "cppdbg",
+          "request": "launch",
+          "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",  // Path to your executable
+          "args": [],
+          "stopAtEntry": false,
+          "cwd": "${fileDirname}",
+          "environment": [],
+          "externalConsole": true,  // Set to 'false' if you don't want a new console window
+          "MIMode": "gdb",  // Use GDB for MinGW
+          "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",  // Path to GDB for MinGW
+          "preLaunchTask": "C/C++: g++.exe build active file",  // Build task before running
+          "setupCommands": [
+              {
+                  "description": "Enable pretty-printing for gdb",
+                  "text": "-enable-pretty-printing",
+                  "ignoreFailures": true
+              }
+          ],
+          "miDebuggerArgs": "",
+          "logging": {
+              "moduleLoad": false,
+              "trace": true,
+              "traceResponse": true,
+              "engineLogging": false
+          },
+          "sourceFileMap": {
+              "/mnt/c": "C:\\"  // Path mapping for WSL or Linux; should work fine on Windows as long as your source files are in Windows paths
+          }
+      }
+  ]
+}
